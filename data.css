@@ -1,0 +1,142 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  width: 95%;
+  margin: 20px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Supaya kolom seimbang */
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal; /* Izinkan teks melompat baris */
+  font-size: 14px;
+  max-width: 120px;
+}
+
+th {
+  background-color: #f0f0f0;
+}
+
+td .aksi-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap; /* tombol bisa turun kalau ruang sempit */
+}
+
+.btn-edit, .btn-hapus {
+  padding: 6px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  display: inline-block;
+}
+
+.btn-edit {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.btn-edit:hover {
+  background-color: #d4ac0d;
+}
+
+.btn-hapus {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-hapus:hover {
+  background-color: #c0392b;
+}
+
+.btn-kembali, .btn-export {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-kembali {
+  background-color: #e74c3c;
+}
+
+.btn-export {
+  background-color: #3498db;
+  float: right;
+}
+
+/* Tombol atas container */
+.top-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+/* Responsive view */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    text-align: left;
+    position: relative;
+    padding-left: 50%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  td .aksi-buttons {
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .btn-kembali, .btn-export {
+    width: 100%;
+    text-align: center;
+  }
+}
